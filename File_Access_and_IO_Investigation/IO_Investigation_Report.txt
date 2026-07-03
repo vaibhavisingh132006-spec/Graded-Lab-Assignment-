@@ -1,0 +1,143 @@
+# IO Investigation Report
+
+**Name:** VAIBHAVI SINGH 
+
+**Date:** 3rd July 2026
+
+## Objective
+
+The purpose of this task is to understand how Linux manages file access and input/output (I/O) operations. I identified open files, observed file descriptors, performed output and error redirection, checked system resource limits, and learned how Linux handles file I/O.
+
+---
+
+## 1. Identify Open Files
+
+**Command:**
+
+```bash
+lsof
+```
+
+**Explanation:**
+
+I used the `lsof` command to display the files currently opened by running processes. The output showed different files and devices being used by the system. This command is useful for troubleshooting file access issues and identifying which process is using a particular file.
+
+---
+
+## 2. Observe File Descriptors
+
+**Command:**
+
+```bash
+ls -l /proc/$$/fd
+```
+
+**Explanation:**
+
+This command lists the file descriptors of the current shell. I observed descriptors like **0**, **1**, and **2**, which represent standard input, standard output, and standard error. Linux uses file descriptors to manage communication between programs and files.
+
+---
+
+## 3. Redirect Command Output
+
+**Command:**
+
+```bash
+ls > output.txt
+```
+
+**Output:**
+
+The command completed successfully, and the output was saved in `output.txt`.
+
+**Explanation:**
+
+I redirected the output of the `ls` command into a file using the `>` operator. Instead of displaying the output on the terminal, Linux stored it in `output.txt`.
+
+---
+
+## 4. Redirect Error Output
+
+**Command:**
+
+```bash
+ls nonexistentfile 2> error.txt
+```
+
+**Output:**
+
+The error message was saved in `error.txt`.
+
+**Explanation:**
+
+The command attempted to list a file that does not exist. I used `2>` to redirect the error message into a separate file. This keeps error messages separate from normal command output.
+
+---
+
+## 5. Redirect Output and Error Separately
+
+**Command:**
+
+```bash
+ls . nonexistentfile > output.txt 2> error.txt
+```
+
+**Output:**
+
+The directory listing was saved in `output.txt`, and the error message was saved in `error.txt`.
+
+**Explanation:**
+
+This command demonstrates how Linux can handle normal output and error output independently. Standard output is written to one file, while errors are written to another file.
+
+---
+
+## 6. Check Resource Limits
+
+**Command:**
+
+```bash
+ulimit -a
+```
+
+**Explanation:**
+
+The `ulimit -a` command displays the resource limits for the current user, such as the maximum number of open files, stack size, and process limits. These limits help prevent a single process from consuming excessive system resources.
+
+---
+
+# File Descriptor Observations
+
+Linux assigns a file descriptor to every open file. The three standard file descriptors are:
+
+* **0** – Standard Input (Keyboard)
+* **1** – Standard Output (Terminal)
+* **2** – Standard Error (Error Messages)
+
+These descriptors allow Linux to manage input and output efficiently.
+
+---
+
+# Output and Error Redirection
+
+* `>` redirects normal output to a file.
+* `2>` redirects error messages to a file.
+* Both can be used together to keep output and errors separate.
+
+---
+
+# Resource Limits
+
+The `ulimit -a` command displayed various system limits, including the maximum number of open files and process limits. These settings help maintain system stability and prevent resource overuse.
+
+---
+
+# How Linux Manages File I/O
+
+Linux treats almost everything as a file, including regular files, devices, and terminals. Every open file is assigned a file descriptor, which the operating system uses to manage reading, writing, and communication between programs. Redirection allows users to control where command output and error messages are stored.
+
+---
+
+# Conclusion
+
+In this task, I observed open files, explored file descriptors, redirected command output and errors, and checked system resource limits. These features help Linux manage files efficiently and make troubleshooting easier.
