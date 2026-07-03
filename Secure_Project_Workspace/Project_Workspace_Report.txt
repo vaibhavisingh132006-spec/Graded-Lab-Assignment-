@@ -1,0 +1,140 @@
+# Project Workspace Report
+
+**Name:** VAIBHAVI SINGH
+
+**Date:** 3rd July 2026
+
+## Objective
+
+The purpose of this task is to create a secure project workspace in Linux and configure appropriate permissions. I also checked the ownership, default umask value, and observed how Linux permissions help protect project files.
+
+---
+
+## 1. Create the Project Workspace
+
+**Command:**
+
+```bash
+mkdir ProjectWorkspace
+```
+
+**Output:**
+
+A new directory named **ProjectWorkspace** was created successfully.
+
+**Explanation:**
+
+I used the `mkdir` command to create a new directory called **ProjectWorkspace**. This directory will be used to store all project-related files in one place.
+
+---
+
+## 2. Create Subdirectories
+
+**Command:**
+
+```bash
+mkdir ProjectWorkspace/docs
+mkdir ProjectWorkspace/src
+mkdir ProjectWorkspace/logs
+```
+
+**Output:**
+
+The folders **docs**, **src**, and **logs** were created inside the ProjectWorkspace directory.
+
+**Explanation:**
+
+I created three subdirectories to organize the project files. The **docs** folder can store documentation, **src** can contain source code, and **logs** can be used for application log files.
+
+---
+
+## 3. Check Directory Permissions Before Modification
+
+**Command:**
+
+```bash
+ls -ld ProjectWorkspace
+```
+
+**Explanation:**
+
+I used the `ls -ld` command to check the current permissions, owner, and group of the ProjectWorkspace directory. This helped me see the default permissions assigned when the directory was created.
+
+---
+
+## 4. Check the Umask Value
+
+**Command:**
+
+```bash
+umask
+```
+
+**Explanation:**
+
+The `umask` command shows the default permission mask used when creating new files and directories. This value determines which permissions are removed by default for security reasons.
+
+---
+
+## 5. Change Directory Permissions
+
+**Command:**
+
+```bash
+chmod 750 ProjectWorkspace
+```
+
+**Output:**
+
+The command executed successfully.
+
+**Explanation:**
+
+I changed the directory permissions to **750** using the `chmod` command. This gives the owner full access, the group read and execute permissions, and no permissions to other users.
+
+---
+
+## 6. Verify Updated Permissions and Ownership
+
+**Command:**
+
+```bash
+ls -ld ProjectWorkspace
+```
+
+**Explanation:**
+
+I checked the directory again to confirm that the permission changes were applied successfully. The output also shows the owner and group associated with the directory.
+
+---
+
+# Directory Structure
+
+```
+ProjectWorkspace
+├── docs
+├── logs
+└── src
+```
+
+---
+
+# Ownership Details
+
+The owner and group information were displayed using the `ls -ld` command. This confirms who has control over the ProjectWorkspace directory.
+
+---
+
+The umask value determines the default permissions for newly created files and directories.
+
+---
+
+# How Permissions Protect Project Data
+
+Linux permissions help keep project files secure by controlling who can read, write, or execute them. Setting the permission to **750** allows only the owner to make changes, while group members can access the directory without modifying it. Other users cannot access the project directory, which helps protect sensitive project files from unauthorized access.
+
+---
+
+# Conclusion
+
+In this task, I created a secure project workspace, organized it into subdirectories, checked the default permissions and umask value, modified the directory permissions, and verified the changes. These steps help improve the security and organization of project data.
