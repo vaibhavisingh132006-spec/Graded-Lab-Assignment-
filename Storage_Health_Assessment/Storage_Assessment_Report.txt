@@ -1,0 +1,91 @@
+# Storage Assessment Report
+
+**Name:** VAIBHAVI SINGH
+
+**Date:**3rd July 2026
+
+## Objective
+
+The purpose of this task is to assess the storage resources available on the Linux system. I collected information about storage devices, mounted file systems, disk usage, inode usage, and recorded my observations using the **vi** editor.
+
+---
+
+## 1. Check Available Storage Devices
+
+**Command:**
+
+```bash
+lsblk
+```
+
+**Explanation:**
+
+I used the `lsblk` command to display all available storage devices and their partitions. The output showed the disk names, partition sizes, and mount points, helping me understand how storage is organized on the system.
+
+---
+
+## 2. Check Mounted File Systems and Disk Usage
+
+**Command:**
+
+```bash
+df -h
+```
+
+**Explanation:**
+
+The `df -h` command displays the available disk space in a human-readable format. I observed the total size, used space, available space, and percentage of disk usage for each mounted file system.
+
+---
+
+## 3. Check Inode Utilization
+
+**Command:**
+
+```bash
+df -i
+```
+
+**Explanation:**
+
+The `df -i` command shows inode usage for each mounted file system. Inodes store information about files, so monitoring inode usage helps ensure the system can continue creating new files even if disk space is still available.
+
+---
+
+## 4. View Mounted File Systems
+
+**Command:**
+
+```bash
+mount
+```
+
+**Explanation:**
+
+I used the `mount` command to display all currently mounted file systems. This helped me identify where different storage devices and partitions are attached within the Linux directory structure.
+
+---
+
+# Storage Health Observations
+
+* The storage devices were detected successfully.
+* The mounted file systems were displayed correctly.
+* Disk usage was within normal limits.
+* Inode usage was also within a safe range.
+* No storage-related issues were observed during this assessment.
+
+---
+
+# Recommendations
+
+* Regularly monitor disk usage to prevent storage from becoming full.
+* Remove unnecessary files and logs to free up space.
+* Check inode usage periodically, especially on systems with many small files.
+* Perform regular backups to protect important data.
+* Monitor storage health regularly to identify issues early.
+
+---
+
+# Conclusion
+
+In this task, I assessed the system's storage by checking storage devices, mounted file systems, disk usage, and inode utilization. The storage resources appeared healthy, and the system is ready for normal use. The report was successfully created using the **vi** editor.
